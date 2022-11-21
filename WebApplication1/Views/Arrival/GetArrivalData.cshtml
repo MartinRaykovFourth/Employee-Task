@@ -1,0 +1,28 @@
+﻿@model List<EmployeeArrivalViewModel>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">Forename</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Role</th>
+            <th scope="col">Teams</th>
+            <th scope="col">Arrival time</th>
+            <th scope="col">Manager Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <th scope="row">@e.EmployeeId</th>
+                <td>@e.Forename</td>
+                <td>@e.Surname</td>
+                <td>@e.Role</td>
+                <td>@e.Teams</td>
+                <td>@e.ArrivalTime</td>
+                <td>@e.ManagerId</td>
+            </tr>
+        }
+    </tbody>
+</table>

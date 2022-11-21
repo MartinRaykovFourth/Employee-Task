@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form class="input-group-sm" asp-controller="Subscription" asp-action="GetSubscribtion" method="get">
+        <input type="submit" value="Subscribe" class="fs-6 btn btn-success mb-3 p-2" />
+    </form>
+</div>
