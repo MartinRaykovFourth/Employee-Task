@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Contracts;
-using WebApplication1.Data;
-using WebApplication1.Services;
+using EmployeeArrivalApp.Data;
+using EmployeeArrivalApp.DataAccess.Contracts;
+using EmployeeArrivalApp.DataAccess.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

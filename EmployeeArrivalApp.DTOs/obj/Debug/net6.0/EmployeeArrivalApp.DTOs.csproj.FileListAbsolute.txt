@@ -1,0 +1,12 @@
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\EmployeeArrivalApp.DTOs.csproj.AssemblyReference.cache
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\EmployeeArrivalApp.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\EmployeeArrivalApp.DTOs.AssemblyInfoInputs.cache
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\EmployeeArrivalApp.DTOs.AssemblyInfo.cs
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\EmployeeArrivalApp.DTOs.csproj.CoreCompileInputs.cache
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\bin\Debug\net6.0\EmployeeArrivalApp.DTOs.deps.json
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\bin\Debug\net6.0\EmployeeArrivalApp.DTOs.dll
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\bin\Debug\net6.0\EmployeeArrivalApp.DTOs.pdb
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\EmployeeArrivalApp.DTOs.dll
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\refint\EmployeeArrivalApp.DTOs.dll
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\EmployeeArrivalApp.DTOs.pdb
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.DTOs\obj\Debug\net6.0\ref\EmployeeArrivalApp.DTOs.dll

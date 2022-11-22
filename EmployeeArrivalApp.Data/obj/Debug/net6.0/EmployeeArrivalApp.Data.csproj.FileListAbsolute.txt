@@ -1,0 +1,15 @@
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.csproj.AssemblyReference.cache
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.AssemblyInfoInputs.cache
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.AssemblyInfo.cs
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.csproj.CoreCompileInputs.cache
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\bin\Debug\net6.0\Data\employees.json
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\bin\Debug\net6.0\EmployeeArrivalApp.Data.deps.json
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\bin\Debug\net6.0\EmployeeArrivalApp.Data.runtimeconfig.json
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\bin\Debug\net6.0\EmployeeArrivalApp.Data.dll
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\bin\Debug\net6.0\EmployeeArrivalApp.Data.pdb
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.dll
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\refint\EmployeeArrivalApp.Data.dll
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.pdb
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\EmployeeArrivalApp.Data.genruntimeconfig.cache
+D:\Downloads\WebApplication1\WebApplication1\EmployeeArrivalApp.Data\obj\Debug\net6.0\ref\EmployeeArrivalApp.Data.dll

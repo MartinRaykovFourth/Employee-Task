@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Contracts;
-using WebApplication1.Data;
-using WebApplication1.DTOs;
 
-namespace WebApplication1.Controllers
+namespace EmployeeArrivalApp.Controllers
 {
     public class HomeController : Controller
     {

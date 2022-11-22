@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Contracts;
+using EmployeeArrivalApp.DataAccess.Contracts;
 
-namespace WebApplication1.Controllers
+namespace EmployeeArrivalApp.Controllers
 {
     public class SubscriptionController : Controller
     {
@@ -14,11 +14,12 @@ namespace WebApplication1.Controllers
             _tokenService = tokenService;
             _httpService = httpService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetSubscribtion()
         {
-
             var tokenDTO = await _httpService.GetSubscribtionAsync(apiUrl);
+
             if (tokenDTO != null)
             {
                 await _tokenService.AddTokenToDatabaseAsync(tokenDTO);

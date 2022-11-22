@@ -1,6 +1,6 @@
-﻿using WebApplication1.Data;
+﻿using EmployeeArrivalApp.Data;
 
-namespace WebApplication1.Models
+namespace EmployeeArrivalApp.Models
 {
     public class EmployeeArrivalViewModel
     {

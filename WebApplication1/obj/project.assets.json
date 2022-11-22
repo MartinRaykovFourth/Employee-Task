@@ -2053,6 +2053,46 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "EmployeeArrivalApp.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.11",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/EmployeeArrivalApp.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmployeeArrivalApp.Data.dll": {}
+        }
+      },
+      "EmployeeArrivalApp.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EmployeeArrivalApp.DTOs": "1.0.0",
+          "EmployeeArrivalApp.Data": "1.0.0",
+          "Microsoft.AspNet.WebApi.Client": "5.2.9"
+        },
+        "compile": {
+          "bin/placeholder/EmployeeArrivalApp.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmployeeArrivalApp.DataAccess.dll": {}
+        }
+      },
+      "EmployeeArrivalApp.DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EmployeeArrivalApp.DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmployeeArrivalApp.DTOs.dll": {}
+        }
       }
     }
   },
@@ -6540,10 +6580,28 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "EmployeeArrivalApp.Data/1.0.0": {
+      "type": "project",
+      "path": "../EmployeeArrivalApp.Data/EmployeeArrivalApp.Data.csproj",
+      "msbuildProject": "../EmployeeArrivalApp.Data/EmployeeArrivalApp.Data.csproj"
+    },
+    "EmployeeArrivalApp.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../EmployeeArrivalApp.DataAccess/EmployeeArrivalApp.DataAccess.csproj",
+      "msbuildProject": "../EmployeeArrivalApp.DataAccess/EmployeeArrivalApp.DataAccess.csproj"
+    },
+    "EmployeeArrivalApp.DTOs/1.0.0": {
+      "type": "project",
+      "path": "../EmployeeArrivalApp.DTOs/EmployeeArrivalApp.DTOs.csproj",
+      "msbuildProject": "../EmployeeArrivalApp.DTOs/EmployeeArrivalApp.DTOs.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "EmployeeArrivalApp.DTOs >= 1.0.0",
+      "EmployeeArrivalApp.Data >= 1.0.0",
+      "EmployeeArrivalApp.DataAccess >= 1.0.0",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.11",
@@ -6557,9 +6615,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "projectName": "WebApplication1",
-      "projectPath": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.csproj",
+      "projectName": "EmployeeArrivalApp",
+      "projectPath": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.csproj",
       "packagesPath": "C:\\Users\\krant\\.nuget\\packages\\",
       "outputPath": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
@@ -6577,7 +6635,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Downloads\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.DataAccess\\EmployeeArrivalApp.DataAccess.csproj": {
+              "projectPath": "D:\\Downloads\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.DataAccess\\EmployeeArrivalApp.DataAccess.csproj"
+            },
+            "D:\\Downloads\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.Data\\EmployeeArrivalApp.Data.csproj": {
+              "projectPath": "D:\\Downloads\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.Data\\EmployeeArrivalApp.Data.csproj"
+            },
+            "D:\\Downloads\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.DTOs\\EmployeeArrivalApp.DTOs.csproj": {
+              "projectPath": "D:\\Downloads\\WebApplication1\\WebApplication1\\EmployeeArrivalApp.DTOs\\EmployeeArrivalApp.DTOs.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

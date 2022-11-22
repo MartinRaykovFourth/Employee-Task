@@ -1,48 +1,37 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
-using WebApplication1.Contracts;
-using WebApplication1.DTOs;
-using WebApplication1.Models;
+using EmployeeArrivalApp.DTOs;
+using EmployeeArrivalApp.Models;
+using EmployeeArrivalApp.DataAccess.Contracts;
 
-namespace WebApplication1.Controllers
+namespace EmployeeArrivalApp.Controllers
 {
     public class ArrivalController : Controller
     {
         private readonly ITokenService _tokenService;
         private readonly IArrivalService _arrivalService;
 
-        public ArrivalController(ITokenService tokenService,IArrivalService arrivalService)
+        public ArrivalController(ITokenService tokenService, IArrivalService arrivalService)
         {
             _tokenService = tokenService;
             _arrivalService = arrivalService;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetArrivalData(string nameSearchCriteria,string sortByCriteria)
+        public async Task<IActionResult> GetArrivalData(string nameSearchCriteria, string sortByCriteria)
         {
             List<EmployeeArrivalFullInfoDTO> dtos = await _arrivalService.GetAllAsync();
 
-            switch (sortByCriteria)
+            if (sortByCriteria != null)
             {
-                case "Role":
-                    dtos = dtos.OrderBy(d => d.Employee.Role)
-                        .ToList();
-                    break;
-                case "Manager Id":
-                    dtos = dtos.OrderBy(d => d.Employee.ManagerId)
-                       .ToList();
-                    break;
-                case "Employee Id":
-                    dtos = dtos.OrderBy(d => d.Employee.EmployeeId)
-                       .ToList();
-                    break;
+                dtos = SortEmployees(sortByCriteria, dtos);
             }
 
             if (nameSearchCriteria != null)
             {
                 nameSearchCriteria = nameSearchCriteria.ToLower();
                 dtos = dtos
-                    .Where(d => d.Employee.Surname.ToLower() == nameSearchCriteria)
+                    .Where(d => d.Employee.Surname.ToLower().StartsWith(nameSearchCriteria))
                     .ToList();
             }
 
@@ -52,8 +41,8 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        
-        public async Task<IActionResult> PostArrivalData([FromBody]List<EmployeeArrivalDTO> dtos)
+
+        public async Task<IActionResult> PostArrivalData([FromBody] List<EmployeeArrivalDTO> dtos)
         {
             StringValues coll;
             Request.Headers.TryGetValue("X-Fourth-Token", out coll);
@@ -73,7 +62,8 @@ namespace WebApplication1.Controllers
 
         private static List<EmployeeArrivalViewModel> MapModels(List<EmployeeArrivalFullInfoDTO> dtos)
         {
-            return dtos.Select(d => new EmployeeArrivalViewModel()
+            return dtos
+                .Select(d => new EmployeeArrivalViewModel()
             {
                 Role = d.Employee.Role,
                 Teams = d.Employee.Teams,
@@ -84,6 +74,29 @@ namespace WebApplication1.Controllers
                 ArrivalTime = d.ArrivalTime
             })
                 .ToList();
+        }
+        private static List<EmployeeArrivalFullInfoDTO> SortEmployees(string sortByCriteria, List<EmployeeArrivalFullInfoDTO> dtos)
+        {
+            switch (sortByCriteria)
+            {
+                case "Role":
+                    dtos = dtos
+                        .OrderBy(d => d.Employee.Role)
+                        .ToList();
+                    break;
+                case "Manager Id":
+                    dtos = dtos
+                        .OrderBy(d => d.Employee.ManagerId)
+                       .ToList();
+                    break;
+                case "Employee Id":
+                    dtos = dtos
+                        .OrderBy(d => d.Employee.EmployeeId)
+                       .ToList();
+                    break;
+            }
+
+            return dtos;
         }
     }
 }

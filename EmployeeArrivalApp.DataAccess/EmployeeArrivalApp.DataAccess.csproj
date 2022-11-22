@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeArrivalApp.Data\EmployeeArrivalApp.Data.csproj" />
+    <ProjectReference Include="..\EmployeeArrivalApp.DTOs\EmployeeArrivalApp.DTOs.csproj" />
+  </ItemGroup>
+
+</Project>
