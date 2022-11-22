@@ -15,6 +15,7 @@ namespace WebApplication1.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=Employees; Integrated Security=true;trustServerCertificate=true");
+            base.OnConfiguring(optionsBuilder);
         }
 
         public DbSet<Team> Teams { get; set; }

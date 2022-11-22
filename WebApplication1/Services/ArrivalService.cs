@@ -33,7 +33,15 @@ namespace WebApplication1.Services
             .Select(ea => new EmployeeArrivalFullInfoDTO()
             {
                 ArrivalTime = ea.ArrivalTime,
-                Employee = ea.Employee
+                Employee = new EmployeeArrivalEmployeeInfoDTO()
+                {
+                    EmployeeId = ea.EmployeeId,
+                    Forename = ea.Employee.Forename,
+                    ManagerId = ea.Employee.ManagerId,
+                    Role = ea.Employee.Role.Name,
+                    Surname = ea.Employee.Surname,
+                    Teams = ea.Employee.Teams.Select(t => t.Name).ToHashSet()
+                }
             })
             .ToListAsync();
         }

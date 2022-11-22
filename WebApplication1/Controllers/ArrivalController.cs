@@ -6,8 +6,6 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    //[ApiController]
-    //[Route("api/[controller]")]
     public class ArrivalController : Controller
     {
         private readonly ITokenService _tokenService;
@@ -20,9 +18,33 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetArrivalData()
+        public async Task<IActionResult> GetArrivalData(string nameSearchCriteria,string sortByCriteria)
         {
             List<EmployeeArrivalFullInfoDTO> dtos = await _arrivalService.GetAllAsync();
+
+            switch (sortByCriteria)
+            {
+                case "Role":
+                    dtos = dtos.OrderBy(d => d.Employee.Role)
+                        .ToList();
+                    break;
+                case "Manager Id":
+                    dtos = dtos.OrderBy(d => d.Employee.ManagerId)
+                       .ToList();
+                    break;
+                case "Employee Id":
+                    dtos = dtos.OrderBy(d => d.Employee.EmployeeId)
+                       .ToList();
+                    break;
+            }
+
+            if (nameSearchCriteria != null)
+            {
+                nameSearchCriteria = nameSearchCriteria.ToLower();
+                dtos = dtos
+                    .Where(d => d.Employee.Surname.ToLower() == nameSearchCriteria)
+                    .ToList();
+            }
 
             List<EmployeeArrivalViewModel> models = MapModels(dtos);
 
@@ -53,12 +75,12 @@ namespace WebApplication1.Controllers
         {
             return dtos.Select(d => new EmployeeArrivalViewModel()
             {
-                Role = d.Employee.Role.Name,
-                Teams = d.Employee.Teams.Select(t => t.Name).ToHashSet(),
+                Role = d.Employee.Role,
+                Teams = d.Employee.Teams,
                 Surname = d.Employee.Surname,
                 Forename = d.Employee.Forename,
                 ManagerId = d.Employee.ManagerId,
-                EmployeeId = d.Employee.Id,
+                EmployeeId = d.Employee.EmployeeId,
                 ArrivalTime = d.ArrivalTime
             })
                 .ToList();
