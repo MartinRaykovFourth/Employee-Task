@@ -70,3 +70,9 @@ D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\Em
 D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\EmployeeArrivalApp.Data.pdb
 D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\EmployeeArrivalApp.DataAccess.dll
 D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\EmployeeArrivalApp.DataAccess.pdb
+D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\libman.json
+D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\TableDependency.SqlClient.dll
+D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\runtimes\win7-x64\native\sni.dll
+D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\runtimes\win7-x86\native\sni.dll
+D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\runtimes\unix\lib\netstandard1.3\System.Data.SqlClient.dll
+D:\Downloads\WebApplication1\WebApplication1\WebApplication1\bin\Debug\net6.0\runtimes\win\lib\netstandard1.3\System.Data.SqlClient.dll

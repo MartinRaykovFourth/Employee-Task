@@ -45,5 +45,27 @@ namespace EmployeeArrivalApp.DataAccess.Services
             })
             .ToListAsync();
         }
+
+        public async Task<List<EmployeeArrivalFullInfoDTO>> GetNewestArrivalsAsync(int count)
+        {
+            return await _context.EmployeesArrivals
+           .OrderByDescending(ea => ea.Id)
+           .Take(count)
+           .OrderBy(ea => ea.Id)
+           .Select(ea => new EmployeeArrivalFullInfoDTO()
+           {
+               ArrivalTime = ea.ArrivalTime,
+               Employee = new EmployeeArrivalEmployeeInfoDTO()
+               {
+                   EmployeeId = ea.EmployeeId,
+                   Forename = ea.Employee.Forename,
+                   ManagerId = ea.Employee.ManagerId,
+                   Role = ea.Employee.Role.Name,
+                   Surname = ea.Employee.Surname,
+                   Teams = ea.Employee.Teams.Select(t => t.Name).ToHashSet()
+               }
+           })
+           .ToListAsync();
+        }
     }
 }

@@ -29,12 +29,11 @@ namespace EmployeeArrivalApp.DataAccess.Services
         {
             Guid tokenGuid = Guid.Parse(token);
 
-            if (_context.Tokens.Any(t => t.Id == tokenGuid))
-            {
-                Token realToken = await _context.Tokens.SingleOrDefaultAsync(t => t.Id == tokenGuid);
-                if (realToken != null && realToken.ExpirationDate > DateTime.Now)
-                    return true;
-            }
+            Token realToken = await _context.Tokens.SingleOrDefaultAsync(t => t.Id == tokenGuid);
+
+            if (realToken != null && realToken.ExpirationDate > DateTime.Now)
+              return true;
+
             return false;
         }
     }

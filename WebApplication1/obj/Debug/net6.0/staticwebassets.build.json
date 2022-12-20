@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ACMfS4BUv+LNyQG7y4BxuzH0cbE1pbIgYKGplKwUOCk=",
+  "Hash": "P4umypwr4wVLziOnuda2OwA7bnHf+kvUsrZrEjTv7ro=",
   "Source": "EmployeeArrivalApp",
   "BasePath": "_content/EmployeeArrivalApp",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\wwwroot\\js\\EmployeeArrival.js",
+      "SourceId": "EmployeeArrivalApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/EmployeeArrivalApp",
+      "RelativePath": "js/EmployeeArrival.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\EmployeeArrival.js"
     },
     {
       "Identity": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\wwwroot\\js\\site.js",
@@ -1069,6 +1086,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js",
+      "SourceId": "EmployeeArrivalApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/EmployeeArrivalApp",
+      "RelativePath": "lib/microsoft/signalr/dist/browser/signalr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Identity": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js",
+      "SourceId": "EmployeeArrivalApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Downloads\\WebApplication1\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/EmployeeArrivalApp",
+      "RelativePath": "lib/microsoft/signalr/dist/browser/signalr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\microsoft\\signalr\\dist\\browser\\signalr.min.js"
     }
   ]
 }

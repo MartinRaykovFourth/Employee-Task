@@ -3,6 +3,8 @@ using Microsoft.Extensions.Primitives;
 using EmployeeArrivalApp.DTOs;
 using EmployeeArrivalApp.Models;
 using EmployeeArrivalApp.DataAccess.Contracts;
+using EmployeeArrivalApp.Hubs;
+using Microsoft.AspNetCore.SignalR;
 
 namespace EmployeeArrivalApp.Controllers
 {
@@ -10,11 +12,13 @@ namespace EmployeeArrivalApp.Controllers
     {
         private readonly ITokenService _tokenService;
         private readonly IArrivalService _arrivalService;
+        private readonly IHubContext<EmployeeArrivalHub> _hub;
 
-        public ArrivalController(ITokenService tokenService, IArrivalService arrivalService)
+        public ArrivalController(ITokenService tokenService, IArrivalService arrivalService,IHubContext<EmployeeArrivalHub> hub)
         {
             _tokenService = tokenService;
             _arrivalService = arrivalService;
+            _hub = hub;
         }
 
         [HttpGet]
@@ -41,7 +45,6 @@ namespace EmployeeArrivalApp.Controllers
         }
 
         [HttpPost]
-
         public async Task<IActionResult> PostArrivalData([FromBody] List<EmployeeArrivalDTO> dtos)
         {
             StringValues coll;
@@ -57,22 +60,48 @@ namespace EmployeeArrivalApp.Controllers
                 return Unauthorized();
             }
 
-            return RedirectToAction("GetArrivalData");
+            if (dtos != null && dtos.Count > 0)
+            {
+                List<EmployeeArrivalFullInfoDTO> modelsDTOs = await _arrivalService.GetNewestArrivalsAsync(dtos.Count);
+                List<EmployeeArrivalViewModel> arrivals = MapArrivals(modelsDTOs);
+
+                await _hub.Clients.All.SendAsync("RecievedArrivals", arrivals);
+
+                return Ok();
+            }
+           
+            return BadRequest();
+        }
+
+        private static List<EmployeeArrivalViewModel> MapArrivals(List<EmployeeArrivalFullInfoDTO> dtos)
+        {
+            return dtos
+                .Select(d => new EmployeeArrivalViewModel()
+                {
+                    Role = d.Employee.Role,
+                    Teams = d.Employee.Teams,
+                    Surname = d.Employee.Surname,
+                    Forename = d.Employee.Forename,
+                    ManagerId = d.Employee.ManagerId,
+                    EmployeeId = d.Employee.EmployeeId,
+                    ArrivalTime = d.ArrivalTime
+                })
+                .ToList();
         }
 
         private static List<EmployeeArrivalViewModel> MapModels(List<EmployeeArrivalFullInfoDTO> dtos)
         {
             return dtos
                 .Select(d => new EmployeeArrivalViewModel()
-            {
-                Role = d.Employee.Role,
-                Teams = d.Employee.Teams,
-                Surname = d.Employee.Surname,
-                Forename = d.Employee.Forename,
-                ManagerId = d.Employee.ManagerId,
-                EmployeeId = d.Employee.EmployeeId,
-                ArrivalTime = d.ArrivalTime
-            })
+                {
+                    Role = d.Employee.Role,
+                    Teams = d.Employee.Teams,
+                    Surname = d.Employee.Surname,
+                    Forename = d.Employee.Forename,
+                    ManagerId = d.Employee.ManagerId,
+                    EmployeeId = d.Employee.EmployeeId,
+                    ArrivalTime = d.ArrivalTime
+                })
                 .ToList();
         }
         private static List<EmployeeArrivalFullInfoDTO> SortEmployees(string sortByCriteria, List<EmployeeArrivalFullInfoDTO> dtos)
@@ -98,5 +127,6 @@ namespace EmployeeArrivalApp.Controllers
 
             return dtos;
         }
+
     }
 }

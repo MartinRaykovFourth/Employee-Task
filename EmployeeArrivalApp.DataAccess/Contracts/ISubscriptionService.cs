@@ -2,7 +2,7 @@
 
 namespace EmployeeArrivalApp.DataAccess.Contracts
 {
-    public interface IHttpService
+    public interface ISubscriptionService
     {
       public Task<TokenDTO> GetSubscribtionAsync(string url);
     }

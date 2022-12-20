@@ -6,5 +6,6 @@ namespace EmployeeArrivalApp.DataAccess.Contracts
     {
         public Task AddToDatabaseAsync(List<EmployeeArrivalDTO> dtos);
         public Task<List<EmployeeArrivalFullInfoDTO>> GetAllAsync();
+        public Task<List<EmployeeArrivalFullInfoDTO>> GetNewestArrivalsAsync(int count);
     }
 }

@@ -5,14 +5,15 @@ namespace EmployeeArrivalApp.Controllers
 {
     public class SubscriptionController : Controller
     {
-        private const string apiUrl = "http://localhost:51397/api/clients/subscribe?date=2016-03-10&callback=http://localhost:5025/Arrival/PostArrivalData";
+        private string apiUrl;
         private readonly ITokenService _tokenService;
-        private readonly IHttpService _httpService;
+        private readonly ISubscriptionService _httpService;
 
-        public SubscriptionController(ITokenService tokenService, IHttpService httpService)
+        public SubscriptionController(ITokenService tokenService, ISubscriptionService httpService,IConfiguration conf)
         {
             _tokenService = tokenService;
             _httpService = httpService;
+            apiUrl = conf.GetValue<string>("ApiURL");
         }
 
         [HttpGet]
